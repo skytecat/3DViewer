@@ -5,23 +5,13 @@ LCOV_FLAGS = --ignore-errors inconsistent --exclude '/Applications/Xcode.app/*' 
 GENHTML_FLAGS = --ignore-errors inconsistent --ignore-errors corrupt
 GTESTFLAGS=-lgtest_main -lgtest -lm
 
-MODEL=Model3DViewer/Model_3DViewer.cc
-MODEL_TEST=testModel.cc
+MODEL=model/Model_3DViewer.cc
+MODEL_TEST=tests/test.cc
 
 all: clean install
 
-dvi:
-	open documentation.md
-
-dist: install
-	mkdir -p dist
-	cp  -R ./build/3D_Viewer.app ./dist
-	cp ./documentation.md ./dist
-	cd ./dist && tar cvzf 3DViewer.tgz *
-	cd ./dist && rm -R 3D_Viewer.app documentation.md
-
 install: uninstall
-	cd ViewerFrontend && qmake ViewerFrontend.pro && make && make clean && rm Makefile && mkdir ../build && mv ViewerFrontend.app 3D_Viewer.app && mv 3D_Viewer.app/$(UI_BIN) ../build
+	cd view && qmake ViewerFrontend.pro && make && make clean && rm Makefile && mkdir ../build && mv ViewerFrontend.app 3D_Viewer.app && mv 3D_Viewer.app/$(UI_BIN) ../build
 	open build/3D_Viewer.app
 	
 uninstall:
