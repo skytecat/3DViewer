@@ -1,23 +1,15 @@
-#include "Model3DViewer/Model_3DViewer.h"
+#include "../model/Model_3DViewer.h"
 #include "gtest/gtest.h"
 
 namespace s21 {
 class Model3DViewerTest : public ::testing::Test {
  protected:
   Model_3DViewer model;
-
-  void SetUp() override {
-    // model = new Model_3DViewer;
-  }
-
-  void TearDown() override {
-    // delete model;
-  }
 };
 
 TEST_F(Model3DViewerTest, CheckFileandCount) {
   Model_3DViewer model;
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
   size_t checkNum = 4406;
   size_t checkNum2 = 4404;
   EXPECT_EQ(model.GetCountVertex(), checkNum);
@@ -31,7 +23,7 @@ TEST_F(Model3DViewerTest, ClearModelTest) {
 }
 
 TEST_F(Model3DViewerTest, SetScaleDefaultTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
   model.SetScale(3.0);
   model.SetScaleDefault();
   EXPECT_NEAR(model.GetVertexFromFace(0, 0).x, 1, 0.88542169343178678);
@@ -40,7 +32,7 @@ TEST_F(Model3DViewerTest, SetScaleDefaultTest) {
 }
 
 TEST_F(Model3DViewerTest, RotationXTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalY = model.GetVertexFromFace(0, 0).y;
   double originalZ = model.GetVertexFromFace(0, 0).z;
@@ -59,7 +51,7 @@ TEST_F(Model3DViewerTest, RotationXTest) {
 }
 
 TEST_F(Model3DViewerTest, RotationYTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalY = model.GetVertexFromFace(0, 0).y;
   double originalZ = model.GetVertexFromFace(0, 0).z;
@@ -78,7 +70,7 @@ TEST_F(Model3DViewerTest, RotationYTest) {
 }
 
 TEST_F(Model3DViewerTest, RotationZTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalY = model.GetVertexFromFace(0, 0).y;
   double originalZ = model.GetVertexFromFace(0, 0).z;
@@ -97,7 +89,7 @@ TEST_F(Model3DViewerTest, RotationZTest) {
 }
 
 TEST_F(Model3DViewerTest, UseAxisXTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalX = model.GetVertexFromFace(0, 0).x;
 
@@ -113,7 +105,7 @@ TEST_F(Model3DViewerTest, UseAxisXTest) {
 }
 
 TEST_F(Model3DViewerTest, UseAxisYTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalY = model.GetVertexFromFace(0, 0).y;
 
@@ -129,7 +121,7 @@ TEST_F(Model3DViewerTest, UseAxisYTest) {
 }
 
 TEST_F(Model3DViewerTest, UseAxisZTest) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   double originalZ = model.GetVertexFromFace(0, 0).z;
 
@@ -145,7 +137,7 @@ TEST_F(Model3DViewerTest, UseAxisZTest) {
 }
 
 TEST_F(Model3DViewerTest, GetCounrFaceLineValidFile) {
-  model.ObjParser("ObjFiles/hand.obj");
+  model.ObjParser("../misc/images/hand.obj");
 
   size_t num = 10;
 
