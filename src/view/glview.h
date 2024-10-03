@@ -6,7 +6,7 @@
 #include <QOpenGLWidget>
 #include <QWidget>
 
-#include "../Controller/controller.h"
+#include "../controller/controller.h"
 
 class glView : public QOpenGLWidget, public QOpenGLFunctions {
  public:
