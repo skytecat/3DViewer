@@ -9,15 +9,15 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    ../Model3DViewer/Model_3DViewer.cc \
-    ../Controller/controller.cpp \
+    ../model/Model_3DViewer.cc \
+    ../controller/controller.cpp \
     glview.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
-    ../Model3DViewer/Model_3DViewer.h \
-    ../Controller/controller.h \
+    ../model/Model_3DViewer.h \
+    ../controller/controller.h \
     glview.h \
     mainwindow.h
 
