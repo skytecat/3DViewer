@@ -4,7 +4,6 @@ glView::glView(Controller *controller, QWidget *parent)
     : QOpenGLWidget(parent), m_controller(controller) {}
 
 glView::~glView() {
-  //    delete m_controller;
 }
 
 void glView::initializeGL() {
