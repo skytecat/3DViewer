@@ -11,9 +11,6 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 MainWindow::~MainWindow() {
-  //    if (m_glView) {
-  //        delete m_glView;
-  //    }
   if (ui) {
     delete ui;
   }
