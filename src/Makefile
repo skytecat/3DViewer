@@ -33,10 +33,5 @@ gcov_report: clean tests
 	genhtml ./test_model.info --output-directory ./report/ $(GENHTML_FLAGS)
 	open ./report/index.html
 
-clang:
-	cp ../materials/linters/.clang-format .
-	find . \( -name "*.h" -o -name "*.cc" -o -name "*.cpp" \) | xargs clang-format -n
-	rm -rf .clang-format
-
 clean:
 	rm -rf a.out test_model *.o  *.gc* *.gcno *.info report vertex*.txt face.txt test_model.dSYM
