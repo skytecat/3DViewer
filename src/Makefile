@@ -21,6 +21,13 @@ tests: clean
 	$(CC) --coverage $(MODEL) $(MODEL_TEST) -o test_model $(GTESTFLAGS) $(CPPFLAGS) 
 	./test_model
 
+lcov:
+	brew install lcov
+
+brew:
+	cd
+	curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh
+
 gcov_report: clean tests
 	lcov -t "test_model" -o test_model.info --ignore-errors inconsistent --no-external -c -d .
 	genhtml ./test_model.info --output-directory ./report/ $(GENHTML_FLAGS)
