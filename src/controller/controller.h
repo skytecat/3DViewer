@@ -8,7 +8,6 @@ class Controller
 public:
     Controller();
     ~Controller();
-    int execute(int command);
 
     int ObjParser(std::string FileName);
     void ClearModel();
